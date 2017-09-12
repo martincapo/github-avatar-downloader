@@ -11,6 +11,13 @@ var GITHUB_TOKEN = "37494239f2d8c06f046ede463765fe54cd3bc1d5";
 
 function getRepoContributors(repoOwner, repoName, cb) {
   // ...
+  if(repoOwner == null || repoName == null) {
+    console.log("Please enter right argument:");
+    console.log("Usage:");
+    console.log("\tnode download_avatars.js jquery jquery");
+    return;
+  }
+
   var requestURL = 'https://'+ GITHUB_USER + ':' + GITHUB_TOKEN + '@api.github.com/repos/' + repoOwner + '/' + repoName + '/contributors';
 
   var options = {
